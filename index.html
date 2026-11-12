@@ -67,6 +67,9 @@ img{max-width:100%;display:block}
 a{color:inherit}
 h1,h2,h3{font-family:var(--f-titulo);font-weight:400;line-height:1.08;margin:0;text-wrap:balance;color:var(--tinta);letter-spacing:-.01em}
 p{margin:0;text-wrap:pretty}
+a,button,summary,[role="button"],label{-webkit-tap-highlight-color:transparent}
+.btn,.hamb,.nav-links a,.painel-menu a,.faq summary,.circ-ico,.wa-flut,.play,.link,.marca{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+:focus:not(:focus-visible){outline:none}
 :focus-visible{outline:2px solid var(--salvia-esc);outline-offset:4px;border-radius:8px}
 .escuro :focus-visible,.taupe :focus-visible,.local-card :focus-visible,.cta-final :focus-visible,.buscamos :focus-visible,.rodape :focus-visible,.btn:focus-visible{outline-color:var(--papel);box-shadow:0 0 0 4px var(--salvia-esc)}
 .it{font-style:italic;color:var(--salvia);font-weight:300}
@@ -984,7 +987,8 @@ h2{font-size:clamp(2.2rem,1.6rem + 2.4vw,3.4rem)}
     b.addEventListener("pointerdown", function(e){ if (e.pointerType === "touch") entra(); });
     b.addEventListener("pointerup", function(e){ if (e.pointerType === "touch") setTimeout(sai, 260); });
     b.addEventListener("pointercancel", sai);
-    b.addEventListener("focus", entra); b.addEventListener("blur", sai);
+    b.addEventListener("focus", function(){ try { if (b.matches(":focus-visible")) entra(); } catch(e){} }); b.addEventListener("blur", sai);
+    b.addEventListener("click", function(){ if (b.blur && !b.matches(":focus-visible")) setTimeout(function(){ b.blur(); }, 300); });
   });
   // Menu: texto que rola
   document.querySelectorAll(".nav-links a").forEach(function(a){
