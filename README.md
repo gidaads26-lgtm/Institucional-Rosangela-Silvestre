@@ -14,8 +14,6 @@ Envie todos os arquivos mantendo a estrutura de pastas para a raiz da hospedagem
 
 ## Pendências
 
-- Endereço completo com CEP (rodapé e seção "Local").
-- Foto do consultório (seção "Local").
 - Domínio: o site usa https://institucionalrosangelasilvestre.vercel.app/. Se trocar de domínio, atualize esse endereço nas tags de compartilhamento, no link canônico e no JSON-LD do `index.html`.
 - Nome da segunda paciente nos depoimentos, se autorizado.
 
