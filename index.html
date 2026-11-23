@@ -249,6 +249,30 @@ h2{font-size:clamp(2.2rem,1.6rem + 2.4vw,3.4rem)}
 .tema.realce .icone{background:rgba(226,148,92,.18);color:var(--ambar)}
 .tema.realce .fio{background:var(--ambar);opacity:1}
 
+/* Balão gástrico hipnótico */
+.balao{background:var(--papel)}
+.balao-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
+.balao-txt{display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start;min-width:0}
+.balao-txt .cabeca{align-items:flex-start;text-align:left;margin:0;max-width:none}
+.balao-lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.1rem}
+.balao-lista li{display:grid;grid-template-columns:3.2rem 1fr;gap:1.1rem;align-items:start}
+.balao-lista .circ{width:3.2rem;height:3.2rem}
+.balao-lista .circ svg{width:1.35rem;height:1.35rem}
+.balao-lista p{color:var(--tinta2);padding-top:.35rem}
+.balao-lista b{color:var(--tinta);font-weight:600}
+.balao-nota{font-size:.92rem;color:var(--salvia-esc);padding-left:1rem;border-left:2px solid var(--ouro)}
+.balao-arte{position:relative;aspect-ratio:1/1;width:100%;max-width:460px;justify-self:center;border-radius:40px;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 70% 20%,rgba(226,148,92,.35),transparent 70%),linear-gradient(160deg,#3A2A21,var(--salvia-esc));box-shadow:0 40px 70px -40px rgba(46,30,20,.7)}
+.balao-palco{position:absolute;inset:0;display:grid;place-items:center}
+.balao-palco .anel{position:absolute;width:46%;aspect-ratio:1;border-radius:50%;border:1.5px solid rgba(239,163,107,.45);animation:respira 6s ease-in-out infinite}
+.balao-palco .a2{width:64%;border-color:rgba(239,163,107,.28);animation-delay:.6s}
+.balao-palco .a3{width:84%;border-color:rgba(239,163,107,.15);animation-delay:1.2s}
+.balao-palco .bolha{position:relative;width:34%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFE3CB 0%,#EFA36B 38%,#A85D30 80%);box-shadow:0 0 60px rgba(239,163,107,.45),inset -10px -14px 30px rgba(80,40,20,.35);animation:respira 6s ease-in-out infinite}
+@keyframes respira{0%,100%{transform:scale(.94)}50%{transform:scale(1.04)}}
+.selo-b{position:absolute;padding:.55rem 1rem;border-radius:99px;background:rgba(253,250,246,.12);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(253,250,246,.25);color:#FDFAF6;font:500 .78rem/1 var(--f-texto);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.selo-b.s1{top:14%;left:10%}
+.selo-b.s2{top:46%;right:7%}
+.selo-b.s3{bottom:14%;left:16%}
+
 /* Como funciona */
 .escuro{background:radial-gradient(ellipse 65% 50% at 50% 0%,rgba(226,148,92,.2),transparent 70%),var(--salvia-esc);color:var(--papel)}
 .passos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
@@ -469,6 +493,14 @@ h2{font-size:clamp(2.2rem,1.6rem + 2.4vw,3.4rem)}
   .vejo{grid-template-columns:1fr;max-width:540px}
   .videos{grid-template-columns:1fr;max-width:560px}
   .vejo li{font-size:1.2rem;padding:1.3rem 1.4rem}
+  .balao-grid{grid-template-columns:1fr;gap:2.8rem}
+  .balao-txt .cabeca{align-items:center;text-align:center}
+  .balao-txt{align-items:stretch}
+  .balao-txt .btn{align-self:center}
+  .balao-arte{max-width:400px}
+  .selo-b{font-size:.68rem;padding:.5rem .8rem}
+  .selo-b.s2{top:auto;bottom:30%;right:5%}
+  .selo-b.s3{bottom:9%;left:12%}
   .temas,.depo-grid{grid-template-columns:1fr;max-width:540px;margin-inline:auto}
   .passos{grid-template-columns:1fr 1fr;row-gap:3rem}
   .passos::before{display:none}
@@ -705,6 +737,36 @@ h2{font-size:clamp(2.2rem,1.6rem + 2.4vw,3.4rem)}
     </div>
   </section>
 
+  <!-- 4b. Balão gástrico hipnótico -->
+  <section class="sec balao" id="balao" aria-labelledby="t-balao">
+    <div class="wrap balao-grid">
+      <div class="balao-txt">
+        <div class="cabeca esq revela-tit">
+          <span class="olho">Emagrecimento</span>
+          <h2 id="t-balao">Emagrecimento com o <span class="it">balão gástrico hipnótico</span></h2>
+          <span class="fio"></span>
+          <p class="apoio">Uma técnica de hipnose clínica para quem quer comer menos e sentir saciedade mais cedo, sem cirurgia e sem nenhum procedimento no corpo.</p>
+        </div>
+        <ul class="balao-lista grupo">
+          <li><span class="circ"><svg aria-hidden="true"><use href="#i-folha"/></svg></span><p><b>Sem cirurgia e sem anestesia.</b> Nada é colocado no seu corpo: o balão existe só na sugestão feita em hipnose.</p></li>
+          <li><span class="circ"><svg aria-hidden="true"><use href="#i-coracao"/></svg></span><p><b>Saciedade com menos comida.</b> A sugestão ajuda você a perceber que já comeu o suficiente com porções menores.</p></li>
+          <li><span class="circ"><svg aria-hidden="true"><use href="#i-raiz"/></svg></span><p><b>Cuidado com a fome emocional.</b> Trabalhamos também o que faz a comida virar refúgio, como a ansiedade, a tristeza e o cansaço.</p></li>
+        </ul>
+        <p class="balao-nota">Pode caminhar junto com o acompanhamento de nutricionista ou médico.</p>
+        <a class="btn brilho" data-wa="balao" href="#">Quero saber sobre o balão<span class="bola"><svg aria-hidden="true"><use href="#i-wa"/></svg></span></a>
+      </div>
+      <div class="balao-arte revela" role="img" aria-label="Ilustração de um balão suave com os selos sem cirurgia, sem anestesia e sem cortes">
+        <div class="balao-palco">
+          <span class="anel a1"></span><span class="anel a2"></span><span class="anel a3"></span>
+          <span class="bolha"></span>
+          <span class="selo-b s1">Sem cirurgia</span>
+          <span class="selo-b s2">Sem anestesia</span>
+          <span class="selo-b s3">Sem cortes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 5. Como funciona -->
   <section class="sec escuro" aria-labelledby="t-como">
     <div class="wrap">
@@ -851,6 +913,7 @@ h2{font-size:clamp(2.2rem,1.6rem + 2.4vw,3.4rem)}
         <details><summary>Quantas sessões eu vou precisar?<span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span></summary><p class="resp">Depende da sua história, do seu quadro e do que você quer trabalhar. Na primeira consulta definimos uma estimativa, que revemos juntos ao longo do processo.</p></details>
         <details><summary>Onde acontece o atendimento?<span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span></summary><p class="resp">O atendimento é presencial, no consultório em Cariacica, ES. O endereço é Rua Tito Olímpio Santana, 7, no bairro Campo Grande.</p></details>
         <details><summary>A hipnose cura doença autoimune?<span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span></summary><p class="resp">Não. Doença autoimune precisa de acompanhamento médico, e nenhum tratamento sério promete cura. A hipnose clínica trabalha o lado emocional e o estado de alerta do corpo, que podem influenciar as crises, a dor e o sono. Nunca interrompa um tratamento por conta própria.</p></details>
+        <details><summary>O balão gástrico hipnótico é uma cirurgia?<span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span></summary><p class="resp">Não. Nada é colocado no seu corpo, e não há anestesia nem recuperação. O balão é uma sugestão feita em estado de hipnose, para ajudar você a sentir saciedade com menos comida e a lidar com a fome emocional.</p></details>
         <details><summary>A primeira consulta já é o tratamento completo?<span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span></summary><p class="resp">Não. Ela é o primeiro encontro: entendemos a sua situação, você tira as dúvidas, aplico uma técnica de liberação emocional e montamos juntos o plano terapêutico.</p></details>
         <details><summary>Em quanto tempo eu vejo alguma mudança?<span class="mais" aria-hidden="true"><svg><use href="#i-mais"/></svg></span></summary><p class="resp">Cada pessoa tem o seu ritmo. Há quem perceba diferenças nas primeiras sessões e há quem precise de mais tempo. Não existe prazo garantido, e acompanhamos a sua evolução a cada encontro.</p></details>
         <div class="caixa">
@@ -902,7 +965,8 @@ h2{font-size:clamp(2.2rem,1.6rem + 2.4vw,3.4rem)}
   var WHATSAPP = "5527999063702";
   var MENSAGENS = {
     agendar: "Olá, Rosangela! Vim pelo site, me identifiquei com o que li e gostaria de agendar uma consulta.",
-    duvida: "Olá, Rosangela! Vim pelo site e tenho uma dúvida sobre o atendimento."
+    duvida: "Olá, Rosangela! Vim pelo site e tenho uma dúvida sobre o atendimento.",
+    balao: "Olá, Rosangela! Vim pelo site e quero saber mais sobre o emagrecimento com o balão gástrico hipnótico."
   };
   var raiz = document.documentElement;
   raiz.lang = "pt-BR";
@@ -1048,7 +1112,7 @@ h2{font-size:clamp(2.2rem,1.6rem + 2.4vw,3.4rem)}
   var io = new IntersectionObserver(function(ents){
     ents.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add("on"); io.unobserve(en.target); } });
   }, {rootMargin:"0px 0px -8% 0px", threshold:0});
-  document.querySelectorAll(".destaque, .antes-txt .apoio, .bio p, .esp, .cert, .local-card, .caixa, .acoes, .centro, .nota, .sub-depo").forEach(function(el){ el.classList.add("sobe"); });
+  document.querySelectorAll(".destaque, .antes-txt .apoio, .bio p, .esp, .cert, .local-card, .caixa, .acoes, .centro, .nota, .sub-depo, .balao-nota, .balao-txt > .btn").forEach(function(el){ el.classList.add("sobe"); });
   document.querySelectorAll(".faq").forEach(function(f){ f.querySelectorAll("details").forEach(function(d, i){ d.style.transitionDelay = (i * 0.07) + "s"; }); });
   document.querySelectorAll(".revela-tit, .grupo, .revela, .desenha, .passos, .sobre-foto, .sobe, .faq, .cta-final").forEach(function(el){ io.observe(el); });
 
